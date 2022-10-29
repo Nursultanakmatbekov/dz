@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class ListOfLanguagesAdapter extends RecyclerView.Adapter<ListOfLanguagesAdapter.NameViewHolder>{
+public class ListOfLanguagesAdapter extends RecyclerView.Adapter<ListOfLanguagesAdapter.LanguagesViewHolder>{
 
     private List<String> listOfLanguages;
     public void setData(List<String> listOfLanguages){
@@ -18,12 +18,12 @@ public class ListOfLanguagesAdapter extends RecyclerView.Adapter<ListOfLanguages
 
     @NonNull
     @Override
-    public NameViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new NameViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_languages,parent,false));
+    public LanguagesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new LanguagesViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_languages,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NameViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LanguagesViewHolder holder, int position) {
         holder.onBind(listOfLanguages.get(position));
     }
 
@@ -32,13 +32,13 @@ public class ListOfLanguagesAdapter extends RecyclerView.Adapter<ListOfLanguages
         return listOfLanguages.size();
     }
 
-    public class NameViewHolder extends RecyclerView.ViewHolder{
+    public class LanguagesViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvLanguages;
 
-        public NameViewHolder(@NonNull View itemView) {
+        public LanguagesViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvLanguages = itemView.findViewById(R.id.tv_languages);
+            tvLanguages = itemView.findViewById(R.id.tvLanguages);
         }
 
         public void onBind(String languages) {

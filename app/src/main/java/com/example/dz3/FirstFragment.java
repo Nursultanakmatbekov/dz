@@ -13,8 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.button.MaterialButton;
 
 public class FirstFragment extends Fragment {
-    private EditText ed_password;
-    private MaterialButton button_input;
+    private EditText edPassword;
+    private MaterialButton buttomInput;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,14 +30,14 @@ public class FirstFragment extends Fragment {
     }
 
     private void initialize(View view) {
-        ed_password = view.findViewById(R.id.ed_password);
-        button_input = view.findViewById(R.id.button_input);
+        edPassword = view.findViewById(R.id.ed_password);
+        buttomInput = view.findViewById(R.id.button_input);
     }
     private void onClick() {
-        button_input.setOnClickListener(view -> {
-            String password = ed_password.getText().toString().trim();
+        buttomInput.setOnClickListener(view -> {
+            String password = edPassword.getText().toString().trim();
             if (!password.equals("admin")) {
-               ed_password.setError("error");
+               edPassword.setError("error");
             } else {
                 getParentFragmentManager().beginTransaction()
                         .setCustomAnimations(R.anim.enter_right_to_left,R.anim.enter_left_to_right)
