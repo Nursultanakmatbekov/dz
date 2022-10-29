@@ -20,6 +20,7 @@ public class RecyclerFragment extends Fragment {
     private ListOfLanguagesAdapter adapter = new ListOfLanguagesAdapter();
     private final List<String> listFromLanguages = new ArrayList<>();
     private RecyclerView rvListOfLanguages;
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
